@@ -1,0 +1,17 @@
+version: '3'
+services:
+  postgres-db:
+    image: postgres:latest
+    container_name: postgresDB
+    environment:
+      - POSTGRES_USER=bsc      # Define el nombre de usuario aquí
+      - POSTGRES_PASSWORD=bsc  # Define la contraseña aquí
+      - POSTGRES_DB=bsc_admin  # Define el nombre de la base de datos aquí
+    ports:
+      - "5432:5432"  # Esto expone el puerto del contenedor, puedes cambiarlo si 5432 está ocupado
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Esto permite que los datos se guarden en el host
+    restart: always
+
+volumes:
+  postgres_data:
