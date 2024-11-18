@@ -1,8 +1,8 @@
 <?php
 require_once 'config.php';
 
-// Obtener los objetivos de la perspectiva financiera
-$perspectiveId = 3; // ID de la perspectiva financiera
+// Obtener los objetivos de la perspectiva
+$perspectiveId = 4; // ID de la perspectiva innovavion
 $queryObjectives = $pdo->prepare("SELECT id, name, description FROM objectives WHERE perspective_id = :perspectiveId");
 $queryObjectives->execute([':perspectiveId' => $perspectiveId]);
 $objectives = $queryObjectives->fetchAll(PDO::FETCH_ASSOC);
@@ -32,7 +32,7 @@ if (!empty($objectives)) {
             <li><a href="index.php">Inicio</a></li>
             <li><a href="clientes.php">Clientes</a></li>
             <li><a href="procesos.php">Procesos</a></li>
-            <li><a href="innovacion.php">Innovacion y aprendizaje</a></li>
+            <li><a href="financiera.php">Financiera</a></li>
             <li><a href="crearObjetivo.php">Crear Objetivo</a></li>
             <li><a href="crearMetrica.php">Crear Métrica</a></li>
         </ul>
@@ -44,7 +44,7 @@ if (!empty($objectives)) {
             <div class="logo">Balance ScoreCard</div>
         </div>
         <section>
-            <h2>Objetivos de la Perspectiva Financiera</h2>
+            <h2>Objetivos de la Perspectiva de Innovacion y aprendizaje</h2>
             <?php if (!empty($objectives)) : ?>
                 <?php foreach ($objectives as $objective) : ?>
                     <div class="card">
@@ -69,7 +69,7 @@ if (!empty($objectives)) {
                     </div>
                 <?php endforeach; ?>
             <?php else : ?>
-                <p>No hay objetivos definidos para la perspectiva financiera.</p>
+                <p>No hay objetivos definidos para la perspectiva de Innovacion y aprendizaje.</p>
             <?php endif; ?>
         </section>
     </main>

@@ -35,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <li><a href="financiera.php">Financiera</a></li>
             <li><a href="clientes.php">Clientes</a></li>
             <li><a href="procesos.php">Procesos</a></li>
+            <li><a href="innovacion.php">Innovacion y aprendizaje</a></li>
             <li><a href="crearMetrica.php">Crear Métrica</a></li>
         </ul>
     </nav>
@@ -58,6 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <option value="2">Clientes</option>
                     <option value="1">Procesos</option>
                     <option value="3">Financiera</option>
+                    <option value="4">Innovacion y aprendizaje</option>
                 </select>
 
                 <button type="submit">Crear Objetivo</button>

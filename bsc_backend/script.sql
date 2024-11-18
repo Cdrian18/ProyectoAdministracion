@@ -62,4 +62,6 @@ INSERT INTO metrics (objective_id, name, unit, target_value, description) VALUES
 (6, 'Costo operativo promedio', 'USD', 10000, 'Reducir el costo promedio de las operaciones principales.');
 
 
+INSERT INTO perspectives (id,name,description) VALUES
+(4,'Innovación y Aprendizaje', 'Fomentar la creatividad, el aprendizaje continuo y la mejora en los procesos para garantizar la sostenibilidad y el crecimiento organizacional.');
 

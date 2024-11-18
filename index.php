@@ -23,6 +23,7 @@ $organization = $queryOrganization->fetch(PDO::FETCH_ASSOC);
                 <li><a href="clientes.php">Clientes</a></li>
                 <li><a href="financiera.php">Financiera</a></li>
                 <li><a href="procesos.php">Procesos</a></li>
+                <li><a href="innovacion.php">Innovacion y aprendizaje</a></li>
                 <li><a href="crearObjetivo.php">Crear Objetivo</a></li>
                 <li><a href="crearMetrica.php">Crear Métrica</a></li>
             </ul>
