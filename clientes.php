@@ -23,6 +23,15 @@ if (!empty($objectives)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perspectiva de Clientes</title>
     <link rel="stylesheet" href="public/styles.css">
+    <style>
+        .iframe-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -71,6 +80,18 @@ if (!empty($objectives)) {
             <?php else : ?>
                 <p>No hay objetivos definidos para la perspectiva de clientes.</p>
             <?php endif; ?>
+
+            <!-- Contenedor del iframe -->
+            <div class="iframe-container">
+                <iframe 
+                    width="1010" 
+                    height="760" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    src="https://onedrive.live.com/embed?resid=AD32DDB37226AACA%2113651&authkey=%21APsD7Pwmsy25q94&em=2&Item='DashboardClientes'!A1%3AR39&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
+                </iframe>
+            </div>
+
         </section>
     </main>
 </div>

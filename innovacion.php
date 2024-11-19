@@ -2,7 +2,7 @@
 require_once 'config.php';
 
 // Obtener los objetivos de la perspectiva
-$perspectiveId = 4; // ID de la perspectiva innovavion
+$perspectiveId = 4; // ID de la perspectiva innovacion
 $queryObjectives = $pdo->prepare("SELECT id, name, description FROM objectives WHERE perspective_id = :perspectiveId");
 $queryObjectives->execute([':perspectiveId' => $perspectiveId]);
 $objectives = $queryObjectives->fetchAll(PDO::FETCH_ASSOC);
@@ -21,8 +21,17 @@ if (!empty($objectives)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perspectiva Financiera</title>
+    <title>Perspectiva Innovación y Aprendizaje</title>
     <link rel="stylesheet" href="public/styles.css">
+    <style>
+        .iframe-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -44,7 +53,7 @@ if (!empty($objectives)) {
             <div class="logo">Balance ScoreCard</div>
         </div>
         <section>
-            <h2>Objetivos de la Perspectiva de Innovacion y aprendizaje</h2>
+            <h2>Objetivos de la Perspectiva de Innovación y Aprendizaje</h2>
             <?php if (!empty($objectives)) : ?>
                 <?php foreach ($objectives as $objective) : ?>
                     <div class="card">
@@ -69,8 +78,20 @@ if (!empty($objectives)) {
                     </div>
                 <?php endforeach; ?>
             <?php else : ?>
-                <p>No hay objetivos definidos para la perspectiva de Innovacion y aprendizaje.</p>
+                <p>No hay objetivos definidos para la perspectiva de Innovación y Aprendizaje.</p>
             <?php endif; ?>
+
+            <!-- Contenedor del iframe -->
+            <div class="iframe-container">
+                <iframe 
+                    width="1020" 
+                    height="422" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    src="https://onedrive.live.com/embed?resid=AD32DDB37226AACA%2113651&authkey=%21APsD7Pwmsy25q94&em=2&Item='DashboardAprendizaje'!A1%3AR19&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
+                </iframe>
+            </div>
+
         </section>
     </main>
 </div>

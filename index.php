@@ -13,6 +13,19 @@ $organization = $queryOrganization->fetch(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Balance Scorecard</title>
     <link rel="stylesheet" href="public/styles.css">
+    <style>
+        .iframe-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .edit-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     
@@ -30,26 +43,37 @@ $organization = $queryOrganization->fetch(PDO::FETCH_ASSOC);
         </nav>
 
         <!-- Contenido principal -->
-        <main class="main-content">
-            <div class="header">
-            <div class="logo">Balance ScoreCard</div>
+        <div class="container">
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <section>
+            <h2><?php echo htmlspecialchars($organization['name']); ?></h2>
+            <div class="card">
+                <h3>Misión</h3>
+                <p><?php echo htmlspecialchars($organization['mission']); ?></p>
             </div>
-            <section>
-                <h2><?php echo htmlspecialchars($organization['name']); ?></h2>
-                <div class="card">
-                    <h3>Misión</h3>
-                    <p><?php echo htmlspecialchars($organization['mission']); ?></p>
-                </div>
-                <div class="card">
-                    <h3>Visión</h3>
-                    <p><?php echo htmlspecialchars($organization['vision']); ?></p>
-                </div>
-                <div>
-                <link rel="stylesheet" href="public/styles.css">
-                </div>
-            </section>
+            <div class="card">
+                <h3>Visión</h3>
+                <p><?php echo htmlspecialchars($organization['vision']); ?></p>
+            </div>
 
-        </main>
-    </div>
+            <!-- Contenedor del iframe -->
+            <div class="iframe-container">
+                <iframe 
+                    width="750" 
+                    height="506" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    src="https://onedrive.live.com/embed?resid=AD32DDB37226AACA%2113651&authkey=%21APsD7Pwmsy25q94&em=2&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
+                </iframe>
+            </div>
+
+            <!-- Enlace para editar Excel -->
+            <div class="edit-link" style="text-align: center;">
+                <a href="https://1drv.ms/x/s!AsqqJnKz3TKt6lPVvjcMq8ZZEifA?e=ZgfL2R" target="_blank">EDITAR EXCEL</a>
+            </div>
+        </section>
+    </main>
+</div>
 </body>
 </html>
